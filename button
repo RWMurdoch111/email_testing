@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+function startJourney() {
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	const utm_term = urlParams.get('utm_term');
+    const utm_campaign = urlParams.get('utm_campaign'); 
+    const utm_content = urlParams.get('utm_content');
+    const utm_medium = urlParams.get('utm_medium');
+    const utm_source = urlParams.get('utm_source');
+
+	window.location = "https://barclaycard.liberis.com/start"
+    +utm_term+"&utm_campaign="
+    +utm_campaign+"&utm_content="
+    +utm_content+"&utm_source="
+    +utm_source
+    +"&utm_medium="+utm_medium;
+    }
+</script>
+
+<head>
+    <title>Liberis Button</title>
+    <style>
+        button {
+            font-size: 0.9375rem;
+            font-family: bc-lt, Tahoma, sans-serif;
+            padding: 10px 15px;
+            line-height: 1.125rem;
+            -webkit-font-smoothing: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: rgb(8, 93, 169);
+            color:#ffffff;
+            border: none;
+        }
+        
+        button:hover {
+            color: #2D63C8;
+            background-color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" name="myButton" onclick="startJourney()"+>Button</button>
+</body>
+</html>
+
